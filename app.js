@@ -27,8 +27,6 @@ app.use((err, req, res, next) => {
 (async () => {
   try {
     await sequelize.authenticate();
-    // await sequelize.sync({ alter: true });
-    // console.log('✅ Database connected and synced');
     app.listen(3000, () => console.log('Server listening on 3000'));
   } catch (err) {
     console.error('DB error', err);
