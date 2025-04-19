@@ -7,8 +7,11 @@ import {
   updateContactById,
   updateFavorite,
 } from "../controllers/contactsControllers.js";
+import auth from '../middlewares/authMiddleware.js';
 
 const contactsRouter = express.Router();
+
+contactsRouter.use(auth);
 
 contactsRouter.get("/", getAllContacts);
 
